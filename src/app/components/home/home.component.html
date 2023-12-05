@@ -1,0 +1,97 @@
+<div class="background-image">
+
+  <div>
+
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+    </div>
+
+    <br><br>
+    <table
+      style="background-color: rgb(246, 249, 252); display: flex; justify-content: center; align-items: center; margin-left: 400px; margin-right: 400px;">
+      <tr>
+        <td> <div style="text-align: center; justify-content: center;">
+            <h2>Deseas buscar pareja por:</h2>
+            <div class="container" style="text-align: center;">
+              <button class="button" style="margin: 20px;"
+                (click)="seleccionarOpcion('Genero')">Genero</button>
+              <button class="button" style="margin: 20px;"
+                (click)="seleccionarOpcion('Artista')">Artista</button>
+              <button class="button" style="margin: 20px;"
+                (click)="seleccionarOpcion('Cancion')">Cancion</button>
+            </div>
+            <div
+              style="text-align: center; justify-content: center; display: flex;">
+              <h5>Celular:</h5>
+              <div style="padding-left: 10px;">
+                <input [(ngModel)]="celular" placeholder="4492610397">
+              </div>
+            </div>
+            <br>
+            <div>
+              <button style="width: 300px;"
+                [disabled]="celular.trim() === '' || (opcionSeleccionada !== 'Genero' && opcionSeleccionada !== 'Artista' && opcionSeleccionada !== 'Cancion')"
+                (click)="buscarPareja()">Buscar</button>
+            </div>
+          </div></td>
+
+      </tr>
+
+    </table>
+
+    <div style="text-align: center; justify-content: center;">
+
+      <div *ngIf="mostrarTablaGenero">
+        <h3>Genero</h3>
+        <table border="1">
+          <tr>
+            <td>Fila 1, Columna 1</td>
+            <td>Fila 1, Columna 2</td>
+          </tr>
+          <tr>
+            <td>Fila 2, Columna 1</td>
+            <td>Fila 2, Columna 2</td>
+          </tr>
+        </table>
+      </div>
+
+      <div *ngIf="mostrarTablaArtista">
+        <h3>Artista</h3>
+        <table border="1">
+          <tr>
+            <td>Fila 1, Columna 1</td>
+            <td>Fila 1, Columna 2</td>
+          </tr>
+          <tr>
+            <td>Fila 2, Columna 1</td>
+            <td>Fila 2, Columna 2</td>
+          </tr>
+        </table>
+      </div>
+
+      <div *ngIf="mostrarTablaCancion">
+        <h3>Cancion</h3>
+        <table border="1">
+          <tr>
+            <td>Fila 1, Columna 1</td>
+            <td>Fila 1, Columna 2</td>
+          </tr>
+          <tr>
+            <td>Fila 2, Columna 1</td>
+            <td>Fila 2, Columna 2</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</div>
