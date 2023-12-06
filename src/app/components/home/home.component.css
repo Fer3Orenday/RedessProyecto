@@ -4,3 +4,39 @@
     height: 100vh;
     width: 100%;
   }
+
+  /* styles.scss */
+
+body {
+  background-color: #f8f9fa; /* Color de fondo del cuerpo, puedes ajustarlo según tus necesidades */
+}
+
+.container {
+  background-color: #ffffff; /* Color de fondo del contenedor, puedes ajustarlo según tus necesidades */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  background-color: #ffffff; /* Color de fondo de la tabla, puedes ajustarlo según tus necesidades */
+}
+
+.table th, .table td {
+  border-color: #dee2e6; /* Color del borde de las celdas, puedes ajustarlo según tus necesidades */
+}
+
+.table thead th {
+  background-color: #007bff; /* Color de fondo del encabezado, puedes ajustarlo según tus necesidades */
+  color: #ffffff; /* Color del texto del encabezado, puedes ajustarlo según tus necesidades */
+}
+
+.btn-primary {
+  background-color: #28a745; /* Color de fondo del botón, puedes ajustarlo según tus necesidades */
+  border-color: #28a745; /* Color del borde del botón, puedes ajustarlo según tus necesidades */
+}
+
+.btn-primary:hover {
+  background-color: #218838; /* Color de fondo del botón al pasar el mouse, puedes ajustarlo según tus necesidades */
+  border-color: #1e7e34; /* Color del borde del botón al pasar el mouse, puedes ajustarlo según tus necesidades */
+}
