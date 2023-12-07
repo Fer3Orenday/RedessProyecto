@@ -7,9 +7,9 @@ import { SpotifyArtist, SpotifyFollowedArtistsResponse, SpotifyUserProfile } fro
   providedIn: 'root'
 })
 export class SpotifyService {
-  private clientId = 'f18695bbc9614f358fa7011ffe1f791a'; // Reemplaza con tu Client ID de Spotify
+  private clientId = '7e6dc48585cd48439b6091225cf9baa4'; // Reemplaza con tu Client ID de Spotify
   private redirectUri = 'http://localhost:4200';
-  private clientSecret = '7ec38afa524640c0a98d8f30f0d6eede'; // Reemplaza con tu Client Secret de Spotify
+  private clientSecret = '8c8fa947c77e408fa8744d837f90905b'; // Reemplaza con tu Client Secret de Spotify
   private authorizeUrl = 'https://accounts.spotify.com/authorize';
   private tokenUrl = 'https://accounts.spotify.com/api/token';
   private apiUrl = 'https://api.spotify.com/v1';
@@ -39,12 +39,21 @@ export class SpotifyService {
     return this.http.get<SpotifyFollowedArtistsResponse>(`${this.apiUrl}/me/following?type=artist`, { headers });
   }
 
-  getTopArtists(accessToken: string): Observable<SpotifyArtist[]> {
+  getTopArtists(accessToken: string): Observable<any> {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${accessToken}`,
     });
 
-    return this.http.get<SpotifyArtist[]>(`${this.apiUrl}/me/top/artists`, { headers });
+    return this.http.get<any>(`${this.apiUrl}/me/top/artists`, { headers });
+  }
+
+
+  getTopAlbums(accessToken: string): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${accessToken}`,
+    });
+
+    return this.http.get<any>(`${this.apiUrl}/me/albums`, { headers });
   }
 
   getUserInfo(token: string): Observable<SpotifyUserProfile> {

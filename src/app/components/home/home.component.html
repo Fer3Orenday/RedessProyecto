@@ -78,35 +78,23 @@
       </table>
     </div>
 
-    <div style="text-align: center; justify-content: center" *ngIf="arrayInfo">
-      <div *ngIf="mostrarTablaGenero">
-        <h3>Genero</h3>
-        <table border="1">
-          <tr>
-            <td>Fila 1, Columna Genero</td>
-            <td>Fila 1, Columna 2</td>
-          </tr>
-          <tr>
-            <td>Fila 2, Columna 1</td>
-            <td>Fila 2, Columna 2</td>
-          </tr>
-        </table>
-      </div>
-
+    <div style="text-align: center; justify-content: center" *ngIf="match">
       <div class="container mt-5">
         <table class="table table-bordered">
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Número</th>
+              <th>Email</th>
+              <th>Coincidencia</th>
               <th>Acción</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of arrayInfo">
-              <td>{{ item.nombre }}</td>
-              <td>{{ item.numero }}</td>
-              <td><button class="btn btn-primary">Hacer match</button></td>
+            <tr *ngFor="let item of match">
+              <td>{{ item.name }}</td>
+              <td>{{ item.email }}</td>
+              <td>{{ item.datos }}</td>
+              <td><button class="btn btn-primary" (click)="guardarMatch(item)">Hacer match</button></td>
             </tr>
           </tbody>
         </table>
