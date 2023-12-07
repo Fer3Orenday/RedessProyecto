@@ -7,9 +7,9 @@ import { SpotifyArtist, SpotifyFollowedArtistsResponse, SpotifyUserProfile } fro
   providedIn: 'root'
 })
 export class SpotifyService {
-  private clientId = '7e6dc48585cd48439b6091225cf9baa4'; // Reemplaza con tu Client ID de Spotify
+  private clientId = '94d680d9059f4c79ba128849bc0fcfcb'; // Reemplaza con tu Client ID de Spotify
   private redirectUri = 'http://localhost:4200';
-  private clientSecret = '8c8fa947c77e408fa8744d837f90905b'; // Reemplaza con tu Client Secret de Spotify
+  private clientSecret = '8411794e928b493d9c3c7af9ca93000b'; // Reemplaza con tu Client Secret de Spotify
   private authorizeUrl = 'https://accounts.spotify.com/authorize';
   private tokenUrl = 'https://accounts.spotify.com/api/token';
   private apiUrl = 'https://api.spotify.com/v1';

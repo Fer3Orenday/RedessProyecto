@@ -11,8 +11,8 @@ import {
   providedIn: 'root',
 })
 export class ProfileService {
-  private serverOne = 'http://192.168.0.16:8080';
-  private serverTwo = 'hhtp://192.168.0.15:3000';
+  private serverOne = 'http://172.16.152.2:8080';
+  private serverTwo = 'hhtp://172.16.158.116:3000';
 
   constructor(private http: HttpClient) {}
 
@@ -21,7 +21,7 @@ export class ProfileService {
     console.log('====================================');
     console.log(profileObject);
     console.log('====================================');
-    return this.http.post(`http://192.168.0.16:8080/guardar-datos`, profileObject);
+    return this.http.post(`http://172.16.152.2:8080/guardar-datos`, profileObject);
 
     // this.http.post(this.serverOne, profileObject);
   }
@@ -34,7 +34,7 @@ export class ProfileService {
     console.log('==================================== Server');
     console.log(profileObject);
     console.log('====================================');
-    return this.http.post(`http://192.168.0.16:8080/guardar-artista`, profileObject);
+    return this.http.post(`http://172.16.152.2:8080/guardar-artista`, profileObject);
     // this.http.post(this.serverOne, profileObject);
   }
 
@@ -44,7 +44,7 @@ export class ProfileService {
     console.log('==================================== Server');
     console.log(profileObject);
     console.log('====================================');
-    return this.http.post(`http://192.168.0.16:8080/guardar-genero`, profileObject);
+    return this.http.post(`http://172.16.152.2:8080/guardar-genero`, profileObject);
     // this.http.post(this.serverOne, profileObject);
   }
 
@@ -53,7 +53,7 @@ export class ProfileService {
     console.log('==================================== Server');
     console.log(profileObject);
     console.log('====================================');
-    return this.http.post(`http://192.168.0.15:3000/guardar-album`, profileObject);
+    return this.http.post(`http://172.16.158.116:3000/guardar-album`, profileObject);
     // this.http.post(this.serverOne, profileObject);
   }
 
@@ -66,15 +66,15 @@ export class ProfileService {
   }
 
   obtenerDatosArtistas(): Observable<any> {
-    return this.http.get<any>('http://192.168.0.16:8080/obtener-artistas');
+    return this.http.get<any>('http://172.16.152.2:8080/obtener-artistas');
   }
 
   obtenerDatosAlbum(): Observable<any> {
-    return this.http.get<any>('http://192.168.0.15:3000/obtener-album');
+    return this.http.get<any>('http://172.16.158.116:3000/obtener-album');
   }
 
   obtenerDatosGeneros(): Observable<any> {
-    return this.http.get<any>('http://192.168.0.16:8080/obtener-genero');
+    return this.http.get<any>('http://172.16.152.2:8080/obtener-genero');
   }
 
 
